@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>SimplyRecipe</title>
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="./css/normalize.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+        <link rel="stylesheet" href="./css/main.css"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-center">
+                <div class="nav-header">
+                    <a href="index.html" class="nav-logo">
+                        <img src="./assets/logo.svg" alt="simply recipes"/>
+                    </a>
+                    <button class="nav-btn btn" onclick="changeicon(1)">
+                        <div class="menu_open">
+                            &#9776;
+                        </div>
+                        <div class="menu_close">
+                            &#9587;
+                        </div>
+                    </button>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        home
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        about
+                    </a>
+                    <a href="tags.html" class="nav-link">
+                        tags
+                    </a>
+                    <a href="recipes.html" class="nav-link">
+                        recipes
+                    </a>
+
+                    <div class="nav-link contact-link">
+                        <a href="contact.html" class="btn">
+                            contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="page">
+            <header class="hero">
+                <div class="hero-container">
+                    <div class="hero-text">
+                        <h1 id="demo"></h1>
+                        <h4 id="demo2"></h4>
+                    </div>
+                </div>
+            </header>
+            <section class="recipes-container">
+                <div class="tags-container">
+                    <h4>recipes</h4>
+                    <div class="tags-list">
+                        <a href="tag-template.html">chiken (1)</a>
+                        <a href="tag-template.html">Breakfast (2)</a>
+                        <a href="tag-template.html">Carrots (3)</a>
+                        <a href="tag-template.html">Food (4)</a>
+                    </div>
+                </div>
+
+                <div class="recipes-list">
+                    <a href="single-recipe.html" class="recipe" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300">
+                        <img src="./assets/recipes/recipe-1.jpeg" class="img recipe-img" alt=""/>
+                        <h5>Carne Asada</h5>
+                        <p>Prep : 15min | Cook : 5min</p>
+                    </a>
+                    <a href="single-recipe.html" class="recipe" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="400">
+                        <img src="./assets/recipes/recipe-2.jpeg" class="img recipe-img" alt=""/>
+                        <h5>Greek Ribs</h5>
+                        <p>Prep : 15min | Cook : 5min</p>
+                    </a>
+
+                    <a href="single-recipe.html" class="recipe" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500">
+                        <img src="./assets/recipes/recipe-3.jpeg" class="img recipe-img" alt=""/>
+                        <h5>Vegetable Soup</h5>
+                        <p>Prep : 15min | Cook : 5min</p>
+                    </a>
+                    <a href="single-recipe.html" class="recipe" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="600">
+                        <img src="./assets/recipes/recipe-4.jpeg" class="img recipe-img" alt=""/>
+                        <h5>Banana Pancakes</h5>
+                        <p>Prep : 15min | Cook : 5min</p>
+                    </a>
+                </div>
+            </section>
+        </main>
+        <footer class="page-footer">
+            <p>
+                &copy;
+                <span id="date"></span>
+                <span class="footer-logo">SimplyRecipes</span>
+                Made by
+                <a href="#">chill vishal</a>
+            </p>
+        </footer>
+        <script src="./js/app.js"></script>
+        <script>
+            var i = 0;
+            var txt = 'Halli Mane'; /* The text */
+            let txt2 = 'Veg / Non-Veg';
+            var speed = 100; /* The speed/duration of the effect in milliseconds */
+            typeWriter()
+
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("demo").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            var j = 0;
+            typeWriterr()
+            var speed2 = 100;
+            function typeWriterr() {
+                if (j < txt2.length) {
+                    document.getElementById("demo2").innerHTML += txt2.charAt(j);
+                    j++;
+                    setTimeout(typeWriterr, speed2);
+                }
+            }
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script>
+            var open = document.querySelector(".menu_open");
+            var close = document.querySelector(".menu_close");
+            var temp = 1;
+            function changeicon(val) {
+                if (temp == val) {
+                    open.style.display = "none";
+                    close.style.display = "block";
+                    temp = 0;
+                } else {
+                    open.style.display = "block";
+                    close.style.display = "none";
+                    temp = 1;
+                }
+            }
+        </script>
+    </body>
+</html>
